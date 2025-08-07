@@ -4,13 +4,24 @@
 
 <h1>Quizzes</h1>
 
-<div id="quizzes">
+<table id="quizzes">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
   <% @quizzes.each do |quiz| %>
-    <%= render quiz %>
-    <p>
-      <%= link_to "Show this quiz", quiz %>
-    </p>
+    <%= render 'quiz_row', quiz: quiz %>
   <% end %>
-</div>
+  </tbody>
+</table>
+
+
+
+
+
 
 <%= link_to "New quiz", new_quiz_path %>
